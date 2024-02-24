@@ -1,10 +1,11 @@
-import React, {src} from React
-import { BrowserRouter as Router, Route,Switch,Redirect } from 'react-router-dom'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import MoviesHomepage from './Movies/MoviesHomepage'
-import MoviesDetailed from './Movies/MoviesDetailed'
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import navbar from './navbar/navbar';
+import MoviesHomepage from './Movies/MoviesHomepage';
+import MoviesDetailed from './Movies/MoviesDetailed';
 
 function App() {
 
@@ -21,14 +22,18 @@ function App() {
       <h1>My React app</h1>
       <h2>Using Vite + React.</h2>
 
-      <div>
       <Router>
-
+        <navbar />
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/movies">Movies</Link>
+        </nav>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/movies" element={<MoviesPage />} />
       </Router>
-      </div>
-
     </>
-  )
+  );
 }
+const Home = ()=> <div>My react app</div>
 
 export default App
