@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../header';
-import Footer from '../footer';
-import { Redirect } from 'react-router-dom';
+import Header from "/header";
+import Footer from '/footer';
 import axios from 'axios';
 
 class MovieDetail extends Component {
@@ -45,7 +44,26 @@ class MovieDetail extends Component {
                     <section className="fullscreen_bg">
                         <Header />
                         <div className="container mx-auto p-4">
-                            {/* Rest of the component remains the same */}
+                            <div className="flex flex-wrap">
+                                <div className="w-full md:w-1/3">
+                                    <img src={movie.Poster} alt={movie.Title} className="mx-auto w-full" />
+                                </div>
+                                <div className="w-full md:w-2/3">
+                                    <div className="p-4">
+                                        <h1 className="text-2xl font-bold">{movie.Title}</h1>
+                                        <h3>Director: {movie.Director}</h3>
+                                        <h3>Language: {movie.Language}</h3>
+                                        <h3>Genre: {movie.Genre}</h3>
+                                        <h3>Released: {movie.Released}</h3>
+                                        <h3>Actors: {movie.Actors}</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="p-4">
+                                <h3 className="text-xl font-bold">Overview</h3>
+                                <p>{movie.Plot}</p>
+                            </div>
                         </div>
                         <Footer />
                     </section>

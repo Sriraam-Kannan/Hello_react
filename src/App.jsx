@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import navbar from './navbar/navbar';
-import MoviesHomepage from './Movies/MoviesHomepage';
-import MoviesDetailed from './Movies/MoviesDetailed';
+import Navbar from './components/navbar/navbar';
+import MoviesHomepage from './components/Movies/MoviesHomepage';
+import MoviesDetailed from './components/Movies/MoviesDetailed';
 
 function App() {
 
@@ -21,15 +21,18 @@ function App() {
       </div>
       <h1>My React app</h1>
       <h2>Using Vite + React.</h2>
-
-      <Router>
-        <navbar />
+      <Navbar />
         <nav>
           <Link to="/">Home</Link>
           <Link to="/movies">Movies</Link>
         </nav>
+
+      <Router>
+        <Routes>
+        
         <Route path="/" exact element={<Home />} />
-        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies" element={<MoviesHomepage />} />
+        </Routes>
       </Router>
     </>
   );
