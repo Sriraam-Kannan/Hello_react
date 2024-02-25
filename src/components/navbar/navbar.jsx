@@ -8,10 +8,10 @@ const Navbar = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link> //to main page, hello react
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/MoviesHomepage">Movies</Link> //to movies list page
+          <Link to="/MoviesHomepage">Movies</Link>
         </li>
       </ul>
     </nav>
