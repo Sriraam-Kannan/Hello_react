@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Search from "./search/index";
+import Search from "../search/search";
 import axios from "axios";
 
 class MoviesList extends React.Component {
