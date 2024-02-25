@@ -31,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<MoviesHomepage />} />
-          <Route path="/movies/:id" element={<MoviesDetailed />} />
+          <Route path="/movies/:movieId" element={<MoviesDetailed />} />
         </Routes>
       </BrowserRouter>
     </ErrorBoundary>

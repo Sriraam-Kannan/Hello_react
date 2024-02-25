@@ -62,12 +62,7 @@ class MoviesList extends React.Component {
                   <div className="card-body">
                     <h5 className="card-title">{movie.Title}</h5>
                     <p className="card-text">{movie.Plot}</p>
-                    <Link
-                      to={`/movie/${movie.imdbID}`}
-                      className="btn btn-primary"
-                    >
-                      View
-                    </Link>
+                    <Link to={`/movie/${movie.imdbID}`}className="btn btn-primary">View</Link>
                   </div>
                 </div>
               </div>

@@ -44,3 +44,86 @@
 .read-the-docs {
   color: #888;
 }
+body {
+  margin-bottom: 60px;
+  background: linear-gradient(to bottom, #030303 0%, rgba(87, 87, 87, 0.72) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe9b5', endColorstr='#ef017c',GradientType=0);
+}
+
+/* Use the "mb-60" utility class for margin-bottom */
+body {
+  margin-bottom: 60px;
+}
+
+/* Add background color and styles to the input group addon */
+.input-group-addon {
+  cursor: pointer;
+}
+
+/* Use "mt-20" utility class for margin-top */
+.movieList {
+  margin-top: 20px;
+}
+
+/* Use "mt-25" utility class for margin-top */
+.movieList > .movieBlock {
+  margin-top: 25px;
+  font-size: 3xl;
+  text-align: center;
+  animation: fadein 2s;
+}
+
+/* Keyframes for fadein animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Use flex utility classes for display:flex and flex-wrap */
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Use flex utility classes for display:flex and flex-direction: column */
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Use "outline-none" utility class for removing outlines on focus */
+.btn {
+  outline: none;
+}
+
+/* Background and box-shadow styles for the search button */
+.searchbtn {
+  background: blue-500;
+  box-shadow: 1px 1px 8px;
+  border: 1px solid blue-500;
+  size: 4px 2px ;
+}
+
+
+/* Styles for the form-signin heading */
+.form-signin-heading {
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+}
+
+/* Footer styles */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: blue-500;
+  border-color: blue-500;
+}
