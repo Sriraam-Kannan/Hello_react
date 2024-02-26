@@ -4,23 +4,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
-import MoviesHomepage from "./components/Movies/MoviesHomepage";
-import MoviesDetailed from "./components/Movies/MoviesDetailed";
+import MoviesHomepage from "./components/Movies/MoviesList";
+import MovieDetails from "./components/Movies/MovieDetails";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
     <ErrorBoundary>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>My React app</h1>
-      <h2>Using Vite + React.</h2>
       <BrowserRouter>
         <Navbar />
         <nav>
@@ -31,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<MoviesHomepage />} />
-          <Route path="/movies/:movieId" element={<MoviesDetailed />} />
+             <Route path="/movies/:imdbID" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
     </ErrorBoundary>
