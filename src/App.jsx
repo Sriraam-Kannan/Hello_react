@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<MoviesHomepage />} />
-             <Route path="/movies/:imdbID" element={<MovieDetails />} />
+             <Route path='/movies/:movieId' element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
     </ErrorBoundary>

@@ -3,30 +3,20 @@ import { useParams } from "react-router-dom";
 import Header from "../header";
 import Footer from "../footer";
 import axios from "axios";
-import { resolveEnvPrefix } from "vite";
-
-// class MovieDetails extends Component {
-//     constructor(props) {
-//         super();
-//         this.state = {
-//             movie: {},
-//             movieId: "tt1853728",
-//             validMovieId: false
-//         };
-//     }
 
 const MovieDetails = () => {
-  const { movieID } = useParams();
-  const [movie, setMovie] = useState([]);
+  const { movieId } = useParams();
+  const [movie, setMovie] = useState({});
   const [validMovieId, setValidMovieId] = useState(false);
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
         const response = await axios.get(
-          `https://www.omdbapi.com/?i=${movieID}&apikey=b468777`
+          `https://www.omdbapi.com/?i=${movieId}&apikey=7055a610`
         );
-        if (response.data.response === "True") {
+        console.log("API Response:", response.data); // Log the API response
+        if (response.data.Response === "True") {
           setMovie(response.data);
           setValidMovieId(true);
         } else {
@@ -34,39 +24,14 @@ const MovieDetails = () => {
           console.log("Invalid Detail");
         }
       } catch (error) {
-        console.error(error);
+        console.error("API Error:", error); // Log the API error
         setValidMovieId(false);
       }
     };
-
+  
     fetchMovie();
   }, [movieId]);
-
-  // componentDidMount() {
-  //     //console.log(useParams());
-  //     axios.get(`http://www.omdbapi.com/?apikey=7055a610&i=${this.state.movieId}`)
-  //         .then(response => {
-  //             if (response.data.Response === "True") {
-  //                 this.setState({
-  //                     movie: response.data,
-  //                     validMovieId: true
-  //                 });
-  //             } else {
-  //                 this.setState({
-  //                     validMovieId: false
-  //                 });
-  //                 console.log()
-
-  //             }
-  //         })
-  //         .catch(error => {
-  //             console.error(error);
-  //             this.setState({
-  //                 validMovieId: false
-  //             });
-  //         });
-  // }
-
+  
   return (
     <div>
       {validMovieId ? (
