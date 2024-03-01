@@ -22,7 +22,7 @@ class MoviesList extends React.Component {
 
   getMovie() {
     axios
-      .get(`http://www.omdbapi.com/?apikey=7055a610&s=${this.state.search}&type=movie`)
+      .get(`https://www.omdbapi.com/?apikey=7055a610&s=${this.state.search}&type=movie`)
       .then((response) => {
         console.log(response.data);
         this.setState({
