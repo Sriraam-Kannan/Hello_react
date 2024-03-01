@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../header";
-import Footer from "../footer";
 import axios from "axios";
 
 const MovieDetails = () => {
@@ -36,7 +34,6 @@ const MovieDetails = () => {
     <div>
       {validMovieId ? (
         <section className="fullscreen_bg">
-          <Header />
           <div className="container mx-auto p-4">
             <div className="flex flex-wrap">
               <div className="w-full md:w-1/3">
@@ -59,11 +56,10 @@ const MovieDetails = () => {
             </div>
 
             <div className="p-4">
-              <h3 className="text-xl font-bold">Overview</h3>
+              <h3 className="text-xl font-bold">Plot</h3>
               <p>{movie.Plot}</p>
             </div>
           </div>
-          <Footer />
         </section>
       ) : (
         <div className="container text-center">
